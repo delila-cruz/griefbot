@@ -4,8 +4,8 @@
   --navbar-height: 56px;
   --user-response-panel-height: 110px;
   --bg-color: #fefefe;
-  --user-color: #f9f9f9;
-  --speaker-color: #eeeeee;
+  --user-color: #444444;
+  --speaker-color: #464646;
   --sidebar-bg-color: #fff;
   --navbar-bg-color: #fff;
   --passage-bg-color: #fff;
@@ -299,7 +299,8 @@ body {
     font-family: 'Google Sans', 'Open Sans', 'Helvetica Neue', sans-serif !important;
 }
 
-.left-sidebar {
+/* .left-sidebar {
   background-color: #f9f9f9;
   border-right: 1px solid #d9d9d9;
-}
+ */
+

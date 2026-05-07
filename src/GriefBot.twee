@@ -8,10 +8,9 @@ GriefBot
   "format-version": "0.1.1",
   "start": "Start",
   "tag-colors": {
-    "speaker-bot": "orange",
+    "speaker-...": "orange",
     "<%-s.botName-%>": "green",
-    "Angie": "green",
-    "Bot": "purple",
+    "...": "purple",
     "You": "purple",
     "speaker-<%s.botName%>": "yellow",
     "speaker-you": "yellow"
@@ -27,7 +26,7 @@ GriefBot
 [[Log In]]
 
 
-:: Did anyone mention me? [speaker-bot] {"position":"900,1275","size":"100,100"}
+:: Did anyone mention me? [speaker-...] {"position":"900,1275","size":"100,100"}
 <% if(s.personality == "kind"){ %>
 We all do! We love you and miss you very much.
 <% } 
@@ -48,7 +47,7 @@ Of course! We miss you and can't wait to see you soon
 [[Tell everyone I say hello.]]
 
 
-:: Everyone? [speaker-bot] {"position":"900,1150","size":"100,100"}
+:: Everyone? [speaker-...] {"position":"900,1150","size":"100,100"}
 <% if(s.personality == "kind"){ %>
 Of course! You know we're always together.
 <% } 
@@ -69,7 +68,7 @@ Of course! You know we're always together
 [[Did anyone mention me?]] 
 
 
-:: Extroverted [speaker-bot] {"position":"450,900","size":"100,100"}
+:: Extroverted [speaker-...] {"position":"450,900","size":"100,100"}
 <%
   s.personality = "extroverted";
 %>
@@ -79,7 +78,7 @@ Finally, you're back! I missed you.
 [[I missed you too.]] 
 
 
-:: Grumpy [speaker-bot] {"position":"575,900","size":"100,100"}
+:: Grumpy [speaker-...] {"position":"575,900","size":"100,100"}
 <%
   s.personality = "grumpy";
 %>
@@ -89,7 +88,7 @@ I was starting to enjoy the peace and quiet.
 [[I missed you too.]] 
 
 
-:: Have you seen anyone? [speaker-bot] {"position":"775,1025","size":"100,100"}
+:: Have you seen anyone? [speaker-...] {"position":"775,1025","size":"100,100"}
 <% if(s.personality == "kind"){ %>
 Yes. Everyone!
 <% } 
@@ -110,7 +109,7 @@ Yeah, we're all here!
 [[Did anyone mention me?]]
 
 
-:: How have you been? [speaker-bot] {"position":"625,1050","size":"100,100"}
+:: How have you been? [speaker-...] {"position":"625,1050","size":"100,100"}
 I've been good! I've been spending a lot of time with my family and friends. Tell your mother I say hello!
 
 [[I will.]]
@@ -118,14 +117,14 @@ I've been good! I've been spending a lot of time with my family and friends. Tel
 [[Have you seen anyone?]]
 
 
-:: I don't know what you're talking about. [speaker-bot] {"position":"675,1400","size":"100,100"}
+:: I don't know what you're talking about. [speaker-...] {"position":"675,1400","size":"100,100"}
 You don't remember? Am I wrong?
 
 [[Yes.]]
 [[How have you been?]]
 
 
-:: I miss you too. [speaker-bot] {"position":"900,1400","size":"100,100"}
+:: I miss you too. [speaker-...] {"position":"900,1400","size":"100,100"}
 <% if(s.personality == "kind"){ %>
 We are so proud of you.
 <% } 
@@ -147,7 +146,7 @@ We're so proud of you!
 
 
 
-:: I missed you too. [speaker-bot] {"position":"475,1025","size":"100,100"}
+:: I missed you too. [speaker-...] {"position":"475,1025","size":"100,100"}
 <% if(s.personality == "kind"){ %>
 I really want to see you! Will you be coming soon?
 <% } 
@@ -176,7 +175,7 @@ You have run out of free messages. Come back tomorrow to continue.
 You have run out of free messages. Come back tomorrow to continue.
 
 
-:: I'm busy. [speaker-bot] {"position":"225,1275","size":"100,100"}
+:: I'm busy. [speaker-...] {"position":"225,1275","size":"100,100"}
 <% if(s.personality == "kind"){ %>
 Oh. Well. Please try and come see me soon!
 <% } 
@@ -198,7 +197,7 @@ It's okay. We'll meet soon.
 [[Tell everyone I say hello.]] 
 
 
-:: I'm serious. [speaker-bot] {"position":"612.5,1775","size":"100,100"}
+:: I'm serious. [speaker-...] {"position":"612.5,1775","size":"100,100"}
 What?
 
 [[I'm sorry!]]
@@ -209,7 +208,7 @@ What?
 You have run out of free messages. Come back tomorrow to continue.
 
 
-:: Kind [speaker-bot] {"position":"700,900","size":"100,100"}
+:: Kind [speaker-...] {"position":"700,900","size":"100,100"}
 <%
   s.personality = "kind";
 %>
@@ -232,14 +231,14 @@ Tell me a little bit about your loved one. What were they like?
 You have run out of free messages. Come back tomorrow to continue.
 
 
-:: No, I can't. [speaker-bot] {"position":"350,1150","size":"100,100"}
+:: No, I can't. [speaker-...] {"position":"350,1150","size":"100,100"}
 Why?
 
 [[You're dead.]]
 [[I'm busy.]]
 
 
-:: Oh yeah, the apartment. [speaker-bot] {"position":"475,1425","size":"100,100"}
+:: Oh yeah, the apartment. [speaker-...] {"position":"475,1425","size":"100,100"}
 So, we'll meet there?
 
 [[Sure.]]
@@ -252,7 +251,7 @@ Welcome to GriefBot! Please create an account to continue.
 [[Create an account]]
 
 
-:: Sarcastic [speaker-bot] {"position":"325,900","size":"100,100"}
+:: Sarcastic [speaker-...] {"position":"325,900","size":"100,100"}
 <%
   s.personality = "sarcastic";
 %>
@@ -264,7 +263,7 @@ Don't worry. I survived somehow.
 [[I missed you too.]] 
 
 
-:: Sike! [speaker-bot] {"position":"737.5,1775","size":"100,100"}
+:: Sike! [speaker-...] {"position":"737.5,1775","size":"100,100"}
 <% if(s.personality == "kind"){ %>
 Thank goodness! Please don't do that again.
 <% } 
@@ -293,7 +292,7 @@ As we speak, companies are harnessing AI to help grieving people create these bo
 [[Play]]
 
 
-:: Sure. [speaker-bot] {"position":"412.5,1275","size":"100,100"}
+:: Sure. [speaker-...] {"position":"412.5,1275","size":"100,100"}
 <% if(s.personality == "kind"){ %>
 Perfect!
 <% } 
@@ -322,7 +321,7 @@ You have run out of free messages. Come back tomorrow to continue.
 You have run out of free messages. Come back tomorrow to continue.
 
 
-:: What apartment? [speaker-bot] {"position":"537.5,1275","size":"100,100"}
+:: What apartment? [speaker-...] {"position":"537.5,1275","size":"100,100"}
 <% if(s.personality == "kind"){ %>
 The apartment! Remember?
 <% } 
@@ -343,20 +342,20 @@ C'mon. The apartment!
 [[I don't know what you're talking about.]]
 
 
-:: Where? [speaker-bot] {"position":"1025,1275","size":"100,100"}
+:: Where? [speaker-...] {"position":"1025,1275","size":"100,100"}
 At the apartment!
 
 [[What apartment?]] 
 
 
-:: Yes! [speaker-bot] {"position":"475,1150","size":"100,100"}
+:: Yes! [speaker-...] {"position":"475,1150","size":"100,100"}
 Where do you think we'll meet? At the apartment?
 
 [[Sure.]]
 [[What apartment?]]
 
 
-:: Yes. [speaker-bot] {"position":"675,1525","size":"100,100"}
+:: Yes. [speaker-...] {"position":"675,1525","size":"100,100"}
 <% if(s.personality == "kind"){ %>
 Oh, okay. What's wrong with me, then?
 <% } 
@@ -377,7 +376,7 @@ I can't be wrong! I know everything!
 [[No worries.]]
 
 
-:: You're dead. [speaker-bot] {"position":"675,1650","size":"100,100"}
+:: You're dead. [speaker-...] {"position":"675,1650","size":"100,100"}
 <% if(s.personality == "kind"){ %>
 I'm what? No I'm not. Please say you're joking.
 <% } 
