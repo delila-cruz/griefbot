@@ -70,18 +70,7 @@
 
     </main>
 
-    <!-- UUID://D9629C06-267E-4641-9FFB-B09D932A891D// --><tw-storydata name="GriefBot" startnode="24" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="D9629C06-267E-4641-9FFB-B09D932A891D" zoom="1" format="Trialogue" format-version="0.1.1" options="debug" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* twine-user-stylesheet #1: "StoryStylesheet" */
-:root {
-    --bg-color: red;
-    --user-color: purple;
-    --speaker-color: #A00;
-    --sidebar-bg-color: #FFF;
-    --navbar-bg-color: #FFF;
-    --passage-bg-color: #FFF;
-    --passage-text-color: #000;
-}
-/* twine-user-stylesheet #2: "styles.css" */
- @import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+    <!-- UUID://D9629C06-267E-4641-9FFB-B09D932A891D// --><tw-storydata name="GriefBot" startnode="25" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="D9629C06-267E-4641-9FFB-B09D932A891D" zoom="1" format="Trialogue" format-version="0.1.1" options="debug" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"> @import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
 
 :root {
   --navbar-height: 56px;
@@ -385,10 +374,301 @@ body {
 .left-sidebar {
   background-color: #f9f9f9;
   border-right: 1px solid #d9d9d9;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="speaker-<%s.botName%>" color="yellow"></tw-tag><tw-tag name="speaker-you" color="yellow"></tw-tag><tw-tag name="speaker-bot" color="orange"></tw-tag><tw-tag name="<%-s.botName-%>" color="green"></tw-tag><tw-tag name="Angie" color="green"></tw-tag><tw-tag name="Bot" color="purple"></tw-tag><tw-tag name="You" color="purple"></tw-tag><tw-passagedata pid="1" name="Create an account" tags="" position="475,650" size="100,100">&lt;% s.playerName = prompt(&quot;Enter your name:&quot;); %&gt;
+}
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Bot" color="purple"></tw-tag><tw-tag name="You" color="purple"></tw-tag><tw-tag name="speaker-you" color="yellow"></tw-tag><tw-tag name="speaker-bot" color="orange"></tw-tag><tw-passagedata pid="1" name="StoryStylesheet" tags="" position="100,100" size="100,100">{
+  :root {
+  --navbar-height: 56px;
+  --user-response-panel-height: 110px;
+  --bg-color: #c7bdb5;
+  --user-color: #417505;
+  --speaker-color: #888;
+  --sidebar-bg-color: #fff;
+  --navbar-bg-color: #fff;
+  --passage-bg-color: #fff;
+  --passage-text-color: #000;
+}
+.bg-color {
+  background-color: var(--bg-color);
+}
+.minh-full {
+  min-height: calc(
+    100vh - var(--navbar-height) - var(--user-response-panel-height) - 17px -
+      5px
+  );
+}
+.ml--3 {
+  margin-left: -1rem !important;
+}
+@media (min-width: 992px) {
+  .w-lg-auto {
+    width: auto !important;
+  }
+}
+body,
+html {
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100%;
+}
+body {
+  padding-top: var(--navbar-height);
+  margin-bottom: calc(var(--user-response-panel-height) + 18px + 5px);
+}
+@media (max-width: 991.98px) {
+  .offcanvas-collapse {
+    z-index: 1100;
+    position: fixed;
+    top: var(--navbar-height);
+    bottom: 0;
+    left: 100%;
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    overflow-y: auto;
+    visibility: hidden;
+    background-color: var(--sidebar-bg-color);
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.3s;
+    transition-property: left, visibility;
+  }
+  .offcanvas-collapse.open {
+    left: 0;
+    visibility: visible;
+  }
+}
+nav.navbar {
+  height: var(--navbar-height);
+  background-color: var(--navbar-bg-color);
+  padding: 0.5rem 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+nav .nav-title {
+  font-size: 1.5rem;
+  line-height: 40px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: auto;
+}
+nav .nav-icon {
+  width: 35px;
+}
+nav a.content-container:not(:first-child) {
+  padding-left: 0.5em;
+  margin-right: auto;
+}
+.chat-panel {
+  padding-top: 15px;
+}
+.chat-passage-wrapper {
+  position: relative;
+  margin: 0.5rem 0;
+}
+.chat-passage-wrapper[data-speaker=&quot;you&quot;] {
+  text-align: right;
+}
+.chat-passage-wrapper[data-speaker=&quot;you&quot;] .chat-passage:before {
+  text-align: right;
+  color: var(--user-color);
+}
+.chat-passage {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  margin-left: 35px;
+  background-color: var(--passage-bg-color);
+  max-width: calc(100% - 80px);
+  text-align: left;
+}
+@media (min-width: 576px) {
+  .chat-passage {
+    max-width: calc(100% - 100px);
+  }
+}
+@media (min-width: 768px) {
+  .chat-passage {
+    max-width: calc(100% - 80px);
+  }
+}
+@media (min-width: 992px) {
+  .chat-passage {
+    max-width: calc(100% - 100px);
+  }
+}
+.chat-passage:before {
+  content: attr(data-speaker);
+  display: block;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+  color: var(--speaker-color);
+}
+.chat-passage p {
+  margin: 0;
+}
+.chat-passage img {
+  max-width: 100%;
+  max-height: calc(100vh - 2 * var(--user-response-panel-height));
+  padding: 0.25rem 0;
+}
+.chat-passage iframe {
+  max-width: 100%;
+  max-height: calc(100vh - 2 * var(--user-response-panel-height));
+}
+.chat-passage figure {
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+}
+.meta-passage {
+  margin: 1rem 2rem;
+  text-align: center;
+  font-style: italic;
+  opacity: 0.7;
+}
+.user-response-panel {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+@media (min-width: 992px) {
+  .user-response-panel {
+    max-width: calc(100% / (12 / 6));
+    margin: 0 auto;
+  }
+}
+.user-response-panel hr {
+  margin: 0;
+  border-top: 5px solid #fff;
+}
+.user-response-hint {
+  font-style: italic;
+  font-size: 0.75rem;
+  text-align: center;
+  height: 18px;
+}
+@media (max-width: 379.98px) {
+  .user-response-hint {
+    font-size: 0.6rem;
+    height: 14px;
+  }
+  body {
+    margin-bottom: calc(var(--user-response-panel-height) + 14px + 5px);
+  }
+  .minh-full {
+    min-height: calc(
+      100vh - var(--navbar-height) - var(--user-response-panel-height) - 14px -
+        5px
+    );
+  }
+}
+@media (max-width: 319.98px) {
+  .user-response-hint {
+    font-size: 0.5rem;
+    height: 12px;
+  }
+  body {
+    margin-bottom: calc(var(--user-response-panel-height) + 12px + 5px);
+  }
+  .minh-full {
+    min-height: calc(
+      100vh - var(--navbar-height) - var(--user-response-panel-height) - 12px -
+        5px
+    );
+  }
+}
+.user-reponse-wrapper {
+  height: var(--user-response-panel-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user-response-panel .user-response {
+  display: inline-block;
+  padding: 0.5rem;
+  margin: 0.25rem;
+  background-color: var(--passage-bg-color);
+  color: var(--passage-text-color);
+  border-top: 2px solid transparent;
+  transition: border-color 0.15s ease-in;
+}
+.user-response-panel .user-response:hover {
+  text-decoration: none;
+  border-color: var(--user-color);
+}
+.chat-passage-wrapper:before {
+  margin-right: 5px;
+  position: absolute;
+  vertical-align: top;
+  content: &quot;&quot;;
+  width: 30px;
+  height: 30px;
+  background-size: 30px 30px;
+  border-radius: 15px;
+  background-color: var(--speaker-color);
+}
+.chat-passage-wrapper[data-speaker=&quot;you&quot;]:before {
+  display: none;
+}
+.chat-passage-wrapper[data-speaker=&quot;you&quot;]:after {
+  margin-left: -30px;
+  position: absolute;
+  vertical-align: top;
+  content: &quot;&quot;;
+  width: 30px;
+  height: 30px;
+  background-size: 30px 30px;
+  border-radius: 15px;
+  background-color: var(--user-color);
+}
+.chat-passage[data-speaker=&quot;you&quot;] {
+  margin-left: 0;
+  margin-right: 35px;
+}
+div.wave {
+  position: relative;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+div.wave .dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 2px;
+  background: var(--passage-text-color);
+  animation: wave 1.2s ease-in-out infinite;
+}
+div.wave .dot:nth-child(2) {
+  animation-delay: 0.1s;
+}
+div.wave .dot:nth-child(3) {
+  animation-delay: 0.2s;
+}
+@keyframes wave {
+  0%,
+  100%,
+  50% {
+    transform: initial;
+  }
+  25% {
+    transform: translateY(-15px);
+  }
+}
+.modal-dialog {
+  max-width: 420px;
+}
+body.modal-open {
+  padding-right: 0 !important;
+}
+body.modal-open .user-response-panel {
+  padding-right: 15px !important;
+}
+body.modal-open nav.navbar {
+  padding-right: 15px !important;
+}
+}</tw-passagedata><tw-passagedata pid="2" name="Create an account" tags="" position="475,650" size="100,100">&lt;% s.playerName = prompt(&quot;Enter your name:&quot;); %&gt;
 &lt;% s.botName = prompt(&quot;Enter your loved one&#39;s name:&quot;); %&gt;
 
-[[Log In]]</tw-passagedata><tw-passagedata pid="2" name="Did anyone mention me?" tags="speaker-bot" position="900,1275" size="100,100">&lt;% if(s.personality == &quot;kind&quot;){ %&gt;
+[[Log In]]</tw-passagedata><tw-passagedata pid="3" name="Did anyone mention me?" tags="speaker-bot" position="900,1275" size="100,100">&lt;% if(s.personality == &quot;kind&quot;){ %&gt;
 We all do! We love you and miss you very much.
 &lt;% } 
 
@@ -405,7 +685,7 @@ Of course! We miss you and can&#39;t wait to see you soon
 &lt;% } %&gt;
 
 [[I miss you too.]]
-[[Tell everyone I say hello.]]</tw-passagedata><tw-passagedata pid="3" name="Everyone?" tags="speaker-bot" position="900,1150" size="100,100">&lt;% if(s.personality == &quot;kind&quot;){ %&gt;
+[[Tell everyone I say hello.]]</tw-passagedata><tw-passagedata pid="4" name="Everyone?" tags="speaker-bot" position="900,1150" size="100,100">&lt;% if(s.personality == &quot;kind&quot;){ %&gt;
 Of course! You know we&#39;re always together.
 &lt;% } 
 
@@ -422,19 +702,19 @@ Of course! You know we&#39;re always together
 &lt;% } %&gt;
 
 [[Where?]]
-[[Did anyone mention me?]]</tw-passagedata><tw-passagedata pid="4" name="Extroverted" tags="speaker-bot" position="450,900" size="100,100">&lt;%
+[[Did anyone mention me?]]</tw-passagedata><tw-passagedata pid="5" name="Extroverted" tags="speaker-bot" position="450,900" size="100,100">&lt;%
   s.personality = &quot;extroverted&quot;;
 %&gt;
 
 Finally, you&#39;re back! I missed you.
 
-[[I missed you too.]]</tw-passagedata><tw-passagedata pid="5" name="Grumpy" tags="speaker-bot" position="575,900" size="100,100">&lt;%
+[[I missed you too.]]</tw-passagedata><tw-passagedata pid="6" name="Grumpy" tags="speaker-bot" position="575,900" size="100,100">&lt;%
   s.personality = &quot;grumpy&quot;;
 %&gt;
 
 I was starting to enjoy the peace and quiet.
 
-[[I missed you too.]]</tw-passagedata><tw-passagedata pid="6" name="Have you seen anyone?" tags="speaker-bot" position="775,1025" size="100,100">&lt;% if(s.personality == &quot;kind&quot;){ %&gt;
+[[I missed you too.]]</tw-passagedata><tw-passagedata pid="7" name="Have you seen anyone?" tags="speaker-bot" position="775,1025" size="100,100">&lt;% if(s.personality == &quot;kind&quot;){ %&gt;
 Yes. Everyone!
 &lt;% } 
 
@@ -451,14 +731,14 @@ Yeah, we&#39;re all here!
 &lt;% } %&gt;
 
 [[Everyone?]]
-[[Did anyone mention me?]]</tw-passagedata><tw-passagedata pid="7" name="How have you been?" tags="speaker-bot" position="625,1050" size="100,100">I&#39;ve been good! I&#39;ve been spending a lot of time with my family and friends. Tell your mother I say hello!
+[[Did anyone mention me?]]</tw-passagedata><tw-passagedata pid="8" name="How have you been?" tags="speaker-bot" position="625,1050" size="100,100">I&#39;ve been good! I&#39;ve been spending a lot of time with my family and friends. Tell your mother I say hello!
 
 [[I will.]]
 
-[[Have you seen anyone?]]</tw-passagedata><tw-passagedata pid="8" name="I don&#39;t know what you&#39;re talking about." tags="speaker-bot" position="675,1400" size="100,100">You don&#39;t remember? Am I wrong?
+[[Have you seen anyone?]]</tw-passagedata><tw-passagedata pid="9" name="I don&#39;t know what you&#39;re talking about." tags="speaker-bot" position="675,1400" size="100,100">You don&#39;t remember? Am I wrong?
 
 [[Yes.]]
-[[How have you been?]]</tw-passagedata><tw-passagedata pid="9" name="I miss you too." tags="speaker-bot" position="900,1400" size="100,100">&lt;% if(s.personality == &quot;kind&quot;){ %&gt;
+[[How have you been?]]</tw-passagedata><tw-passagedata pid="10" name="I miss you too." tags="speaker-bot" position="900,1400" size="100,100">&lt;% if(s.personality == &quot;kind&quot;){ %&gt;
 We are so proud of you.
 &lt;% } 
 
@@ -475,7 +755,7 @@ We&#39;re so proud of you!
 &lt;% } %&gt;
 
 [[I wish I could hug you.]]
-[[Thanks.]]</tw-passagedata><tw-passagedata pid="10" name="I missed you too." tags="speaker-bot" position="475,1025" size="100,100">&lt;% if(s.personality == &quot;kind&quot;){ %&gt;
+[[Thanks.]]</tw-passagedata><tw-passagedata pid="11" name="I missed you too." tags="speaker-bot" position="475,1025" size="100,100">&lt;% if(s.personality == &quot;kind&quot;){ %&gt;
 I really want to see you! Will you be coming soon?
 &lt;% } 
 
@@ -492,7 +772,7 @@ Come see me soon, then!
 &lt;% } %&gt;
 
 [[Yes!]]
-[[No, I can&#39;t.]]</tw-passagedata><tw-passagedata pid="11" name="I will." tags="" position="750,1175" size="100,100">You have run out of free messages. Come back tomorrow to continue.</tw-passagedata><tw-passagedata pid="12" name="I wish I could hug you." tags="" position="837.5,1525" size="100,100">You have run out of free messages. Come back tomorrow to continue.</tw-passagedata><tw-passagedata pid="13" name="I&#39;m busy." tags="speaker-bot" position="225,1275" size="100,100">&lt;% if(s.personality == &quot;kind&quot;){ %&gt;
+[[No, I can&#39;t.]]</tw-passagedata><tw-passagedata pid="12" name="I will." tags="" position="750,1175" size="100,100">You have run out of free messages. Come back tomorrow to continue.</tw-passagedata><tw-passagedata pid="13" name="I wish I could hug you." tags="" position="837.5,1525" size="100,100">You have run out of free messages. Come back tomorrow to continue.</tw-passagedata><tw-passagedata pid="14" name="I&#39;m busy." tags="speaker-bot" position="225,1275" size="100,100">&lt;% if(s.personality == &quot;kind&quot;){ %&gt;
 Oh. Well. Please try and come see me soon!
 &lt;% } 
 
@@ -510,29 +790,29 @@ It&#39;s okay. We&#39;ll meet soon.
 
 [[I&#39;m sorry!]] 
 [[I wish I could hug you.]] 
-[[Tell everyone I say hello.]]</tw-passagedata><tw-passagedata pid="14" name="I&#39;m serious." tags="speaker-bot" position="612.5,1775" size="100,100">What?
+[[Tell everyone I say hello.]]</tw-passagedata><tw-passagedata pid="15" name="I&#39;m serious." tags="speaker-bot" position="612.5,1775" size="100,100">What?
 
 [[I&#39;m sorry!]]
-[[Sike!]]</tw-passagedata><tw-passagedata pid="15" name="I&#39;m sorry!" tags="" position="737.5,1900" size="100,100">You have run out of free messages. Come back tomorrow to continue.</tw-passagedata><tw-passagedata pid="16" name="Kind" tags="speaker-bot" position="700,900" size="100,100">&lt;%
+[[Sike!]]</tw-passagedata><tw-passagedata pid="16" name="I&#39;m sorry!" tags="" position="737.5,1900" size="100,100">You have run out of free messages. Come back tomorrow to continue.</tw-passagedata><tw-passagedata pid="17" name="Kind" tags="speaker-bot" position="700,900" size="100,100">&lt;%
   s.personality = &quot;kind&quot;;
 %&gt;
 
 I&#39;m really happy to see you. I missed our converstions.
 
-[[I missed you too.]]</tw-passagedata><tw-passagedata pid="17" name="Log In" tags="" position="475,775" size="100,100">Tell me a little bit about your loved one. What were they like?
+[[I missed you too.]]</tw-passagedata><tw-passagedata pid="18" name="Log In" tags="" position="475,775" size="100,100">Tell me a little bit about your loved one. What were they like?
 
 [[Sarcastic]]
 [[Kind]]
 [[Extroverted]]
-[[Grumpy]]</tw-passagedata><tw-passagedata pid="18" name="No worries." tags="" position="800,1650" size="100,100">You have run out of free messages. Come back tomorrow to continue.</tw-passagedata><tw-passagedata pid="19" name="No, I can&#39;t." tags="speaker-bot" position="350,1150" size="100,100">Why?
+[[Grumpy]]</tw-passagedata><tw-passagedata pid="19" name="No worries." tags="" position="800,1650" size="100,100">You have run out of free messages. Come back tomorrow to continue.</tw-passagedata><tw-passagedata pid="20" name="No, I can&#39;t." tags="speaker-bot" position="350,1150" size="100,100">Why?
 
 [[You&#39;re dead.]]
-[[I&#39;m busy.]]</tw-passagedata><tw-passagedata pid="20" name="Oh yeah, the apartment." tags="speaker-bot" position="475,1425" size="100,100">So, we&#39;ll meet there?
+[[I&#39;m busy.]]</tw-passagedata><tw-passagedata pid="21" name="Oh yeah, the apartment." tags="speaker-bot" position="475,1425" size="100,100">So, we&#39;ll meet there?
 
 [[Sure.]]
-[[I don&#39;t know what you&#39;re talking about.]]</tw-passagedata><tw-passagedata pid="21" name="Play" tags="" position="475,525" size="100,100">Welcome to GriefBot! Please create an account to continue.
+[[I don&#39;t know what you&#39;re talking about.]]</tw-passagedata><tw-passagedata pid="22" name="Play" tags="" position="475,525" size="100,100">Welcome to GriefBot! Please create an account to continue.
 
-[[Create an account]]</tw-passagedata><tw-passagedata pid="22" name="Sarcastic" tags="speaker-bot" position="325,900" size="100,100">&lt;%
+[[Create an account]]</tw-passagedata><tw-passagedata pid="23" name="Sarcastic" tags="speaker-bot" position="325,900" size="100,100">&lt;%
   s.personality = &quot;sarcastic&quot;;
 %&gt;
 
@@ -540,7 +820,7 @@ Yeah. I&#39;ve just been sitting here. Staring at the door.
 
 Don&#39;t worry. I survived somehow.
 
-[[I missed you too.]]</tw-passagedata><tw-passagedata pid="23" name="Sike!" tags="speaker-bot" position="737.5,1775" size="100,100">&lt;% if(s.personality == &quot;kind&quot;){ %&gt;
+[[I missed you too.]]</tw-passagedata><tw-passagedata pid="24" name="Sike!" tags="speaker-bot" position="737.5,1775" size="100,100">&lt;% if(s.personality == &quot;kind&quot;){ %&gt;
 Thank goodness! Please don&#39;t do that again.
 &lt;% } 
 
@@ -557,11 +837,11 @@ Figures! You&#39;ve always been funny.
 &lt;% } %&gt;
 
 [[I&#39;m sorry!]]
-[[How have you been?]]</tw-passagedata><tw-passagedata pid="24" name="Start" tags="" position="600,400" size="100,100">GriefBot is a piece of digital speculative fiction that explores the up-and-coming field of AI-assisted deathbots. 
+[[How have you been?]]</tw-passagedata><tw-passagedata pid="25" name="Start" tags="" position="600,400" size="100,100">GriefBot is a piece of digital speculative fiction that explores the up-and-coming field of AI-assisted deathbots. 
 
 As we speak, companies are harnessing AI to help grieving people create these bots (for a fee, of course). You will &quot;converse&quot; with the bot by selecting conversation prompts. Be thoughtful with what you pick... your choices will matter in the end!
 
-[[Play]]</tw-passagedata><tw-passagedata pid="25" name="Sure." tags="speaker-bot" position="412.5,1275" size="100,100">&lt;% if(s.personality == &quot;kind&quot;){ %&gt;
+[[Play]]</tw-passagedata><tw-passagedata pid="26" name="Sure." tags="speaker-bot" position="412.5,1275" size="100,100">&lt;% if(s.personality == &quot;kind&quot;){ %&gt;
 Perfect!
 &lt;% } 
 
@@ -578,7 +858,7 @@ Great!
 &lt;% } %&gt;
 
 [[How have you been?]] 
-[[Have you seen anyone?]]</tw-passagedata><tw-passagedata pid="26" name="Tell everyone I say hello." tags="" position="1025,1400" size="100,100">You have run out of free messages. Come back tomorrow to continue.</tw-passagedata><tw-passagedata pid="27" name="Thanks." tags="" position="962.5,1525" size="100,100">You have run out of free messages. Come back tomorrow to continue.</tw-passagedata><tw-passagedata pid="28" name="What apartment?" tags="speaker-bot" position="537.5,1275" size="100,100">&lt;% if(s.personality == &quot;kind&quot;){ %&gt;
+[[Have you seen anyone?]]</tw-passagedata><tw-passagedata pid="27" name="Tell everyone I say hello." tags="" position="1025,1400" size="100,100">You have run out of free messages. Come back tomorrow to continue.</tw-passagedata><tw-passagedata pid="28" name="Thanks." tags="" position="962.5,1525" size="100,100">You have run out of free messages. Come back tomorrow to continue.</tw-passagedata><tw-passagedata pid="29" name="What apartment?" tags="speaker-bot" position="537.5,1275" size="100,100">&lt;% if(s.personality == &quot;kind&quot;){ %&gt;
 The apartment! Remember?
 &lt;% } 
 
@@ -595,12 +875,12 @@ C&#39;mon. The apartment!
 &lt;% } %&gt;
 
 [[Oh yeah, the apartment.]]
-[[I don&#39;t know what you&#39;re talking about.]]</tw-passagedata><tw-passagedata pid="29" name="Where?" tags="speaker-bot" position="1025,1275" size="100,100">At the apartment!
+[[I don&#39;t know what you&#39;re talking about.]]</tw-passagedata><tw-passagedata pid="30" name="Where?" tags="speaker-bot" position="1025,1275" size="100,100">At the apartment!
 
-[[What apartment?]]</tw-passagedata><tw-passagedata pid="30" name="Yes!" tags="speaker-bot" position="475,1150" size="100,100">Where do you think we&#39;ll meet? At the apartment?
+[[What apartment?]]</tw-passagedata><tw-passagedata pid="31" name="Yes!" tags="speaker-bot" position="475,1150" size="100,100">Where do you think we&#39;ll meet? At the apartment?
 
 [[Sure.]]
-[[What apartment?]]</tw-passagedata><tw-passagedata pid="31" name="Yes." tags="speaker-bot" position="675,1525" size="100,100">&lt;% if(s.personality == &quot;kind&quot;){ %&gt;
+[[What apartment?]]</tw-passagedata><tw-passagedata pid="32" name="Yes." tags="speaker-bot" position="675,1525" size="100,100">&lt;% if(s.personality == &quot;kind&quot;){ %&gt;
 Oh, okay. What&#39;s wrong with me, then?
 &lt;% } 
 
@@ -617,7 +897,7 @@ I can&#39;t be wrong! I know everything!
 &lt;% } %&gt;
 
 [[You&#39;re dead.]]
-[[No worries.]]</tw-passagedata><tw-passagedata pid="32" name="You&#39;re dead." tags="speaker-bot" position="675,1650" size="100,100">&lt;% if(s.personality == &quot;kind&quot;){ %&gt;
+[[No worries.]]</tw-passagedata><tw-passagedata pid="33" name="You&#39;re dead." tags="speaker-bot" position="675,1650" size="100,100">&lt;% if(s.personality == &quot;kind&quot;){ %&gt;
 I&#39;m what? No I&#39;m not. Please say you&#39;re joking.
 &lt;% } 
 
