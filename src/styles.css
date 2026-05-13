@@ -1,6 +1,6 @@
  @import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
 
-:root {
+ :root {
   --navbar-height: 56px;
   --user-response-panel-height: 110px;
   --bg-color: #fefefe;
@@ -225,9 +225,7 @@ nav a.content-container:not(:first-child) {
   border-radius: 15px;
   background-color: var(--speaker-color);
 }
-.chat-passage-wrapper[data-speaker="you"]:before {
-  display: none;
-}
+
 .chat-passage-wrapper[data-speaker="you"]:after {
   margin-left: -30px;
   position: absolute;
@@ -293,6 +291,13 @@ body {
     font-family: 'Google Sans', 'Open Sans', 'Helvetica Neue', sans-serif !important;
 }
 
+.phistory {
+  background-color: #f9f9f9 !important;
+  border: solid #d9d9d9 1px;
+  border-radius: 20px;
+  padding: 6px 12px;
+}
+
 /* computers */
 @media (min-width: 992px) {
 
@@ -328,4 +333,19 @@ body {
     justify-content: center;
   }
 
+}
+
+.chat-passage-wrapper[data-speaker="you"]:after {
+  display: none;
+}
+
+.chat-passage-wrapper[data-speaker="..."]:before {
+  display: none;
+}
+
+.chat-passage {
+  background-color: #EEEEEE;
+  border: solid #d9d9d9 1px;
+  border-radius: 20px;
+  padding: 6px 12px;
 }
