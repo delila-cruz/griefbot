@@ -1,7 +1,6 @@
 :: StoryTitle
 GriefBot
 
-
 :: StoryData
 {
   "ifid": "D9629C06-267E-4641-9FFB-B09D932A891D",
@@ -10,313 +9,24 @@ GriefBot
   "start": "Start",
   "tag-colors": {
     "speaker-...": "orange",
-    "Bot": "purple",
+    "<%-s.botName-%>": "green",
+    "...": "purple",
     "You": "purple",
+    "speaker-<%s.botName%>": "yellow",
     "speaker-you": "yellow"
   },
   "zoom": 1
 }
 
-:: StoryStylesheet
-{
-  :root {
-  --navbar-height: 56px;
-  --user-response-panel-height: 110px;
-  --bg-color: #c7bdb5;
-  --user-color: #417505;
-  --speaker-color: #888;
-  --sidebar-bg-color: #fff;
-  --navbar-bg-color: #fff;
-  --passage-bg-color: #fff;
-  --passage-text-color: #000;
-}
-.bg-color {
-  background-color: var(--bg-color);
-}
-.minh-full {
-  min-height: calc(
-    100vh - var(--navbar-height) - var(--user-response-panel-height) - 17px -
-      5px
-  );
-}
-.ml--3 {
-  margin-left: -1rem !important;
-}
-@media (min-width: 992px) {
-  .w-lg-auto {
-    width: auto !important;
-  }
-}
-body,
-html {
-  overflow-x: hidden;
-  position: relative;
-  min-height: 100%;
-}
-body {
-  padding-top: var(--navbar-height);
-  margin-bottom: calc(var(--user-response-panel-height) + 18px + 5px);
-}
-@media (max-width: 991.98px) {
-  .offcanvas-collapse {
-    z-index: 1100;
-    position: fixed;
-    top: var(--navbar-height);
-    bottom: 0;
-    left: 100%;
-    width: 100%;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    overflow-y: auto;
-    visibility: hidden;
-    background-color: var(--sidebar-bg-color);
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.3s;
-    transition-property: left, visibility;
-  }
-  .offcanvas-collapse.open {
-    left: 0;
-    visibility: visible;
-  }
-}
-nav.navbar {
-  height: var(--navbar-height);
-  background-color: var(--navbar-bg-color);
-  padding: 0.5rem 15px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-nav .nav-title {
-  font-size: 1.5rem;
-  line-height: 40px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: auto;
-}
-nav .nav-icon {
-  width: 35px;
-}
-nav a.content-container:not(:first-child) {
-  padding-left: 0.5em;
-  margin-right: auto;
-}
-.chat-panel {
-  padding-top: 15px;
-}
-.chat-passage-wrapper {
-  position: relative;
-  margin: 0.5rem 0;
-}
-.chat-passage-wrapper[data-speaker="you"] {
-  text-align: right;
-}
-.chat-passage-wrapper[data-speaker="you"] .chat-passage:before {
-  text-align: right;
-  color: var(--user-color);
-}
-.chat-passage {
-  display: inline-block;
-  padding: 0.25rem 0.5rem;
-  margin-left: 35px;
-  background-color: var(--passage-bg-color);
-  max-width: calc(100% - 80px);
-  text-align: left;
-}
-@media (min-width: 576px) {
-  .chat-passage {
-    max-width: calc(100% - 100px);
-  }
-}
-@media (min-width: 768px) {
-  .chat-passage {
-    max-width: calc(100% - 80px);
-  }
-}
-@media (min-width: 992px) {
-  .chat-passage {
-    max-width: calc(100% - 100px);
-  }
-}
-.chat-passage:before {
-  content: attr(data-speaker);
-  display: block;
-  font-size: 0.75rem;
-  text-transform: capitalize;
-  color: var(--speaker-color);
-}
-.chat-passage p {
-  margin: 0;
-}
-.chat-passage img {
-  max-width: 100%;
-  max-height: calc(100vh - 2 * var(--user-response-panel-height));
-  padding: 0.25rem 0;
-}
-.chat-passage iframe {
-  max-width: 100%;
-  max-height: calc(100vh - 2 * var(--user-response-panel-height));
-}
-.chat-passage figure {
-  margin-bottom: 0.25rem;
-  font-size: 0.75rem;
-}
-.meta-passage {
-  margin: 1rem 2rem;
-  text-align: center;
-  font-style: italic;
-  opacity: 0.7;
-}
-.user-response-panel {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-@media (min-width: 992px) {
-  .user-response-panel {
-    max-width: calc(100% / (12 / 6));
-    margin: 0 auto;
-  }
-}
-.user-response-panel hr {
-  margin: 0;
-  border-top: 5px solid #fff;
-}
-.user-response-hint {
-  font-style: italic;
-  font-size: 0.75rem;
-  text-align: center;
-  height: 18px;
-}
-@media (max-width: 379.98px) {
-  .user-response-hint {
-    font-size: 0.6rem;
-    height: 14px;
-  }
-  body {
-    margin-bottom: calc(var(--user-response-panel-height) + 14px + 5px);
-  }
-  .minh-full {
-    min-height: calc(
-      100vh - var(--navbar-height) - var(--user-response-panel-height) - 14px -
-        5px
-    );
-  }
-}
-@media (max-width: 319.98px) {
-  .user-response-hint {
-    font-size: 0.5rem;
-    height: 12px;
-  }
-  body {
-    margin-bottom: calc(var(--user-response-panel-height) + 12px + 5px);
-  }
-  .minh-full {
-    min-height: calc(
-      100vh - var(--navbar-height) - var(--user-response-panel-height) - 12px -
-        5px
-    );
-  }
-}
-.user-reponse-wrapper {
-  height: var(--user-response-panel-height);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.user-response-panel .user-response {
-  display: inline-block;
-  padding: 0.5rem;
-  margin: 0.25rem;
-  background-color: var(--passage-bg-color);
-  color: var(--passage-text-color);
-  border-top: 2px solid transparent;
-  transition: border-color 0.15s ease-in;
-}
-.user-response-panel .user-response:hover {
-  text-decoration: none;
-  border-color: var(--user-color);
-}
-.chat-passage-wrapper:before {
-  margin-right: 5px;
-  position: absolute;
-  vertical-align: top;
-  content: "";
-  width: 30px;
-  height: 30px;
-  background-size: 30px 30px;
-  border-radius: 15px;
-  background-color: var(--speaker-color);
-}
-.chat-passage-wrapper[data-speaker="you"]:before {
-  display: none;
-}
-.chat-passage-wrapper[data-speaker="you"]:after {
-  margin-left: -30px;
-  position: absolute;
-  vertical-align: top;
-  content: "";
-  width: 30px;
-  height: 30px;
-  background-size: 30px 30px;
-  border-radius: 15px;
-  background-color: var(--user-color);
-}
-.chat-passage[data-speaker="you"] {
-  margin-left: 0;
-  margin-right: 35px;
-}
-div.wave {
-  position: relative;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-div.wave .dot {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  margin-right: 2px;
-  background: var(--passage-text-color);
-  animation: wave 1.2s ease-in-out infinite;
-}
-div.wave .dot:nth-child(2) {
-  animation-delay: 0.1s;
-}
-div.wave .dot:nth-child(3) {
-  animation-delay: 0.2s;
-}
-@keyframes wave {
-  0%,
-  100%,
-  50% {
-    transform: initial;
-  }
-  25% {
-    transform: translateY(-15px);
-  }
-}
-.modal-dialog {
-  max-width: 420px;
-}
-body.modal-open {
-  padding-right: 0 !important;
-}
-body.modal-open .user-response-panel {
-  padding-right: 15px !important;
-}
-body.modal-open nav.navbar {
-  padding-right: 15px !important;
-}
-}
 
 :: Create an account {"position":"475,650","size":"100,100"}
 <% s.playerName = prompt("Enter your name:"); %>
-<% s.botName = prompt("Enter your loved one's name:"); %>
+<% s.botName = prompt("Enter the deceased's name:"); %>
 
 [[Log In]]
 
 
-:: Did anyone mention me? [speaker-bot] {"position":"900,1275","size":"100,100"}
+:: Did anyone mention me? [speaker-...] {"position":"900,1275","size":"100,100"}
 <% if(s.personality == "kind"){ %>
 We all do! We love you and miss you very much.
 <% } 
@@ -337,7 +47,7 @@ Of course! We miss you and can't wait to see you soon
 [[Tell everyone I say hello.]]
 
 
-:: Everyone? [speaker-bot] {"position":"900,1150","size":"100,100"}
+:: Everyone? [speaker-...] {"position":"900,1150","size":"100,100"}
 <% if(s.personality == "kind"){ %>
 Of course! You know we're always together.
 <% } 
@@ -358,7 +68,7 @@ Of course! You know we're always together
 [[Did anyone mention me?]] 
 
 
-:: Extroverted [speaker-bot] {"position":"450,900","size":"100,100"}
+:: Extroverted [speaker-...] {"position":"450,900","size":"100,100"}
 <%
   s.personality = "extroverted";
 %>
@@ -368,7 +78,7 @@ Finally, you're back! I missed you.
 [[I missed you too.]] 
 
 
-:: Grumpy [speaker-bot] {"position":"575,900","size":"100,100"}
+:: Grumpy [speaker-...] {"position":"575,900","size":"100,100"}
 <%
   s.personality = "grumpy";
 %>
@@ -378,7 +88,7 @@ I was starting to enjoy the peace and quiet.
 [[I missed you too.]] 
 
 
-:: Have you seen anyone? [speaker-bot] {"position":"775,1025","size":"100,100"}
+:: Have you seen anyone? [speaker-...] {"position":"775,1025","size":"100,100"}
 <% if(s.personality == "kind"){ %>
 Yes. Everyone!
 <% } 
@@ -399,7 +109,7 @@ Yeah, we're all here!
 [[Did anyone mention me?]]
 
 
-:: How have you been? [speaker-bot] {"position":"625,1050","size":"100,100"}
+:: How have you been? [speaker-...] {"position":"625,1050","size":"100,100"}
 I've been good! I've been spending a lot of time with my family and friends. Tell your mother I say hello!
 
 [[I will.]]
@@ -407,14 +117,14 @@ I've been good! I've been spending a lot of time with my family and friends. Tel
 [[Have you seen anyone?]]
 
 
-:: I don't know what you're talking about. [speaker-bot] {"position":"675,1400","size":"100,100"}
+:: I don't know what you're talking about. [speaker-...] {"position":"675,1400","size":"100,100"}
 You don't remember? Am I wrong?
 
 [[Yes.]]
 [[How have you been?]]
 
 
-:: I miss you too. [speaker-bot] {"position":"900,1400","size":"100,100"}
+:: I miss you too. [speaker-...] {"position":"900,1400","size":"100,100"}
 <% if(s.personality == "kind"){ %>
 We are so proud of you.
 <% } 
@@ -436,7 +146,7 @@ We're so proud of you!
 
 
 
-:: I missed you too. [speaker-bot] {"position":"475,1025","size":"100,100"}
+:: I missed you too. [speaker-...] {"position":"475,1025","size":"100,100"}
 <% if(s.personality == "kind"){ %>
 I really want to see you! Will you be coming soon?
 <% } 
@@ -465,7 +175,7 @@ You have run out of free messages. Come back tomorrow to continue.
 You have run out of free messages. Come back tomorrow to continue.
 
 
-:: I'm busy. [speaker-bot] {"position":"225,1275","size":"100,100"}
+:: I'm busy. [speaker-...] {"position":"225,1275","size":"100,100"}
 <% if(s.personality == "kind"){ %>
 Oh. Well. Please try and come see me soon!
 <% } 
@@ -487,7 +197,7 @@ It's okay. We'll meet soon.
 [[Tell everyone I say hello.]] 
 
 
-:: I'm serious. [speaker-bot] {"position":"612.5,1775","size":"100,100"}
+:: I'm serious. [speaker-...] {"position":"612.5,1775","size":"100,100"}
 What?
 
 [[I'm sorry!]]
@@ -498,7 +208,7 @@ What?
 You have run out of free messages. Come back tomorrow to continue.
 
 
-:: Kind [speaker-bot] {"position":"700,900","size":"100,100"}
+:: Kind [speaker-...] {"position":"700,900","size":"100,100"}
 <%
   s.personality = "kind";
 %>
@@ -521,14 +231,14 @@ Tell me a little bit about your loved one. What were they like?
 You have run out of free messages. Come back tomorrow to continue.
 
 
-:: No, I can't. [speaker-bot] {"position":"350,1150","size":"100,100"}
+:: No, I can't. [speaker-...] {"position":"350,1150","size":"100,100"}
 Why?
 
 [[You're dead.]]
 [[I'm busy.]]
 
 
-:: Oh yeah, the apartment. [speaker-bot] {"position":"475,1425","size":"100,100"}
+:: Oh yeah, the apartment. [speaker-...] {"position":"475,1425","size":"100,100"}
 So, we'll meet there?
 
 [[Sure.]]
@@ -541,7 +251,7 @@ Welcome to GriefBot! Please create an account to continue.
 [[Create an account]]
 
 
-:: Sarcastic [speaker-bot] {"position":"325,900","size":"100,100"}
+:: Sarcastic [speaker-...] {"position":"325,900","size":"100,100"}
 <%
   s.personality = "sarcastic";
 %>
@@ -553,7 +263,7 @@ Don't worry. I survived somehow.
 [[I missed you too.]] 
 
 
-:: Sike! [speaker-bot] {"position":"737.5,1775","size":"100,100"}
+:: Sike! [speaker-...] {"position":"737.5,1775","size":"100,100"}
 <% if(s.personality == "kind"){ %>
 Thank goodness! Please don't do that again.
 <% } 
@@ -582,7 +292,7 @@ As we speak, companies are harnessing AI to help grieving people create these bo
 [[Play]]
 
 
-:: Sure. [speaker-bot] {"position":"412.5,1275","size":"100,100"}
+:: Sure. [speaker-...] {"position":"412.5,1275","size":"100,100"}
 <% if(s.personality == "kind"){ %>
 Perfect!
 <% } 
@@ -611,7 +321,7 @@ You have run out of free messages. Come back tomorrow to continue.
 You have run out of free messages. Come back tomorrow to continue.
 
 
-:: What apartment? [speaker-bot] {"position":"537.5,1275","size":"100,100"}
+:: What apartment? [speaker-...] {"position":"537.5,1275","size":"100,100"}
 <% if(s.personality == "kind"){ %>
 The apartment! Remember?
 <% } 
@@ -632,20 +342,20 @@ C'mon. The apartment!
 [[I don't know what you're talking about.]]
 
 
-:: Where? [speaker-bot] {"position":"1025,1275","size":"100,100"}
+:: Where? [speaker-...] {"position":"1025,1275","size":"100,100"}
 At the apartment!
 
 [[What apartment?]] 
 
 
-:: Yes! [speaker-bot] {"position":"475,1150","size":"100,100"}
+:: Yes! [speaker-...] {"position":"475,1150","size":"100,100"}
 Where do you think we'll meet? At the apartment?
 
 [[Sure.]]
 [[What apartment?]]
 
 
-:: Yes. [speaker-bot] {"position":"675,1525","size":"100,100"}
+:: Yes. [speaker-...] {"position":"675,1525","size":"100,100"}
 <% if(s.personality == "kind"){ %>
 Oh, okay. What's wrong with me, then?
 <% } 
@@ -666,7 +376,7 @@ I can't be wrong! I know everything!
 [[No worries.]]
 
 
-:: You're dead. [speaker-bot] {"position":"675,1650","size":"100,100"}
+:: You're dead. [speaker-...] {"position":"675,1650","size":"100,100"}
 <% if(s.personality == "kind"){ %>
 I'm what? No I'm not. Please say you're joking.
 <% } 
@@ -685,3 +395,15 @@ Lies!
 
 [[I'm serious.]]
 [[Sike!]]
+
+
+:: StoryStylesheet [stylesheet]
+:root {
+    --bg-color: red;
+    --user-color: purple;
+    --speaker-color: #A00;
+    --sidebar-bg-color: #FFF;
+    --navbar-bg-color: #FFF;
+    --passage-bg-color: #FFF;
+    --passage-text-color: #000;
+}
