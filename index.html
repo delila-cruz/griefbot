@@ -170,12 +170,9 @@ nav a.content-container:not(:first-child) {
 }
 .chat-panel {
   padding-top: 15px;
-  margin-left: 25%
+
 }
-.chat-passage-wrapper {
-  position: relative;
-  margin: 0.5rem 0;
-}
+
 .chat-passage-wrapper[data-speaker="you"] {
   text-align: right;
 }
@@ -383,16 +380,38 @@ body {
     font-family: 'Google Sans', 'Open Sans', 'Helvetica Neue', sans-serif !important;
 }
 
-.left-sidebar {
- position: fixed;
-  top: var(--navbar-height);
-  left: 0;
-  width: 25%;
-  height: calc(100vh - var(--navbar-height));
-  background-color: #f9f9f9;
-  border-right: 1px solid #d9d9d9;
-  overflow-y: auto;
-  position: fixed;
+/* computers */
+@media (min-width: 992px) {
+
+  .left-sidebar {
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+
+    width: 25%;
+    height: calc(100vh - var(--navbar-height));
+
+    background-color: #f9f9f9;
+    border-right: 1px solid #d9d9d9;
+
+    overflow-y: auto;
+  }
+
+  .chat-panel {
+    margin-left: 25%;
+    padding-top: 15px;
+  }
+
+}
+
+/* tablet/mobile */
+@media (max-width: 991.98px) {
+
+  .chat-panel {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="..." color="purple"></tw-tag><tw-tag name="You" color="purple"></tw-tag><tw-tag name="speaker-<%s.botName%>" color="yellow"></tw-tag><tw-tag name="speaker-you" color="yellow"></tw-tag><tw-tag name="speaker-..." color="orange"></tw-tag><tw-tag name="<%-s.botName-%>" color="green"></tw-tag><tw-passagedata pid="1" name="Create an account" tags="" position="475,650" size="100,100">&lt;% s.playerName = prompt(&quot;Enter your name:&quot;); %&gt;
 &lt;% s.botName = prompt(&quot;Enter the deceased&#39;s name:&quot;); %&gt;
 

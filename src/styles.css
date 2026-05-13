@@ -87,12 +87,9 @@ nav a.content-container:not(:first-child) {
 }
 .chat-panel {
   padding-top: 15px;
-  margin-left: 25%
+
 }
-.chat-passage-wrapper {
-  position: relative;
-  margin: 0.5rem 0;
-}
+
 .chat-passage-wrapper[data-speaker="you"] {
   text-align: right;
 }
@@ -300,14 +297,36 @@ body {
     font-family: 'Google Sans', 'Open Sans', 'Helvetica Neue', sans-serif !important;
 }
 
-.left-sidebar {
- position: fixed;
-  top: var(--navbar-height);
-  left: 0;
-  width: 25%;
-  height: calc(100vh - var(--navbar-height));
-  background-color: #f9f9f9;
-  border-right: 1px solid #d9d9d9;
-  overflow-y: auto;
-  position: fixed;
+/* computers */
+@media (min-width: 992px) {
+
+  .left-sidebar {
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+
+    width: 25%;
+    height: calc(100vh - var(--navbar-height));
+
+    background-color: #f9f9f9;
+    border-right: 1px solid #d9d9d9;
+
+    overflow-y: auto;
+  }
+
+  .chat-panel {
+    margin-left: 25%;
+    padding-top: 15px;
+  }
+
+}
+
+/* tablet/mobile */
+@media (max-width: 991.98px) {
+
+  .chat-panel {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 }
