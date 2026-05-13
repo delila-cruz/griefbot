@@ -21,7 +21,7 @@ GriefBot
 
 :: Create an account {"position":"475,650","size":"100,100"}
 <% s.playerName = prompt("Enter your name:"); %>
-<% s.botName = prompt("Enter your loved one's name:"); %>
+<% s.botName = prompt("Enter the deceased's name:"); %>
 
 [[Log In]]
 
