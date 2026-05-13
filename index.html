@@ -366,10 +366,6 @@
       <span id="psubtitle"></span>
       <span id="pauthor"></span>
     </div>
-    <button id="nav-link-menu" class="content-container navbar-toggler p-0 border-0 d-lg-none" type="button"
-      data-toggle="offcanvas">
-      Menu
-    </button>
   </nav>
 
   <main role="main" class="container-fluid">
@@ -377,10 +373,19 @@
       <div class="left-sidebar col-lg d-none d-lg-block">
         <div id="left-sidebar-container" class="content-container position-fixed mt-3 mt-lg-5 m-lg-4">
           <img width="250" src="src/assets/current-chat-active.svg" alt="Current Chat">
+          <script>
+function refreshPage() {
+  location.reload();
+}
+</script>
           <br><br>
-          <img width="250" src="src/assets/new-chat.svg" alt="New Chat">
+          <img width="250"
+     src="src/assets/new-chat.svg"
+     alt="New Chat"
+     onclick="refreshPage()"
+     style="cursor: pointer;">
           <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-          <img width="200" src="src/assets/about.svg" alt="About Page">
+          <a href="about.html" ><img width="200" src="src/assets/about.svg" alt="About Page"> </a>
         </div>
       </div>
       <div class="chat-panel col-lg-6 minh-full bg-color">
@@ -1178,6 +1183,8 @@ body {
 
       }, { "jquery": 1, "lz-string": 2, "underscore": 4 }]
     }, {}, [5]);
+
+    
   </script>
 </body>
 
