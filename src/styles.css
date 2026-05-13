@@ -87,6 +87,7 @@ nav a.content-container:not(:first-child) {
 }
 .chat-panel {
   padding-top: 15px;
+  margin-left: 25%
 }
 .chat-passage-wrapper {
   position: relative;
@@ -299,8 +300,14 @@ body {
     font-family: 'Google Sans', 'Open Sans', 'Helvetica Neue', sans-serif !important;
 }
 
-/* .left-sidebar {
+.left-sidebar {
+ position: fixed;
+  top: var(--navbar-height);
+  left: 0;
+  width: 25%;
+  height: calc(100vh - var(--navbar-height));
   background-color: #f9f9f9;
   border-right: 1px solid #d9d9d9;
- */
-
+  overflow-y: auto;
+  position: fixed;
+}
